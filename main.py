@@ -8,7 +8,6 @@ import time
 #Mensaje de bienvenida
 print("Bienvenido/a a hundir la flota")
 name1 = input("Escriba su nombre: ") 
-
 #Creamos partida
 partida = Tablero(name1)
 
@@ -20,8 +19,10 @@ for tab in [partida.tablero1,partida.tablero2]:
     partida.colocar_barcos_tablero(tab)
 
 turno_jugador = True
+contador_rondas = 0
 
 while True:
+    contador_rondas = contador_rondas + 1
     if turno_jugador:
         print("Tu turno")
         time.sleep(2)
@@ -38,7 +39,6 @@ while True:
     
         # Disparo
         resultado = partida.disparo(x1, y1, partida.tablero2, partida.tablero_disparos)
-        
         if resultado == True:
             # Si aciertas (o repites casilla), sigue siendo tu turno. No hacemos nada.
             pass
@@ -68,4 +68,11 @@ while True:
 
     if partida.gana_persona() or partida.gana_maquina():
         exit()
+
+    contador_m = partida.contador_aciertos(partida.tablero1)
+    contador_jugador = partida.contador_aciertos(partida.tablero_disparos)
+
+    funciones.desanimar_animar(contador_m,contador_jugador,partida.nombre1)
+
+    
     

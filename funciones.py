@@ -34,4 +34,58 @@ def print_tableros_juntos(tablero_jugador, tablero_maquina):
         
     print("=============================   |   =============================")
 
-    
+def desanimar_animar(contador_m,contador_u,nombre):
+    if contador_m > contador_u: #Desanimamos al jugador para que salga del juego
+        if (contador_m == 2):
+                pregunta = input("La máquina está en racha ¿Estás seguro que quieres seguir intentándolo? s/n")
+                if pregunta == "s":
+                    pass
+                else: 
+                    print("Has perdido, hasta la próxima :)")
+                    print("Resultados: Máquina", contador_m, nombre,":", contador_u)
+                    exit()
+        elif (contador_m == 3):
+                    pregunta = input("La máquina te está sacando mucha ventaja, ¿quieres seguir?  s/n")
+                    if pregunta == "s":
+                        pass
+                    else:
+                        print("Has perdido, hasta la próxima :)")
+                        print("Resultados: Máquina", contador_m, nombre,":", contador_u) 
+                        exit()
+        
+        elif (contador_m >= 4):
+                        pregunta = input("No te quiero desanimar pero va a ser complicado remontar, ¿quieres seguir?  s/n")
+                        if pregunta == "s":
+                            pass
+                        else: 
+                            print("Has perdido, hasta la próxima :)")
+                            print("Resultados: Máquina", contador_m, nombre,":", contador_u) 
+                            exit()
+        else:
+            pass
+    else: #Animamos pero incitamos a salir
+        if (contador_u == 2):
+            pregunta = input("Vas muy bien ¿seguimos? s/n")
+            if pregunta == "s":
+                pass
+            else: 
+                print("Has ganado!!!! Enhorabuenaaa, hasta la próxima :)")
+                print("Resultados: Máquina", contador_m, nombre,":", contador_u)
+                exit()
+        elif (contador_u==3):
+            pregunta = input("Está claro que vas a ganar ¿seguimos? s/n")
+            if pregunta == "s":
+                pass
+            else: 
+                print("Has ganado!!!! Enhorabuenaaa, hasta la próxima :)")
+                print("Resultados: Máquina", contador_m, nombre,":", contador_u)
+                exit()
+        elif (contador_u>=4):
+                    pregunta = input("¡Qué bueno eres al hundir la flota! La máquina ya no tiene nada que hacer ¿seguimos? s/n")
+                    if pregunta == "s":
+                        pass
+                    else: 
+                        print("Has ganado!!!! Enhorabuenaaa, hasta la próxima :)")
+                        print("Resultados: Máquina", contador_m, nombre,":", contador_u)
+                        exit()
+
