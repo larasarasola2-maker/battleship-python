@@ -17,4 +17,4 @@ El código está modularizado siguiendo las mejores prácticas:
 ## 🎮 Cómo jugar
 1. Clona este repositorio:
    ```bash
-   git clone [https://github.com/tu-usuario/hundir-la-flota.git](https://github.com/larasarasola2-maker/hundir-la-flota.git)
+   git clone [https://github.com/tu-usuario/hundir-la-flota.git](https://github.com/larasarasola2-maker/battleship-python.git)
