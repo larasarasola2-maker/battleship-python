@@ -1,20 +1,30 @@
-# ⚓ Hundir la Flota (Battleship) en Python
+# ⚓ Battleship (Hundir la Flota) in Python
 
-Un juego clásico de "Hundir la Flota" desarrollado completamente en Python para jugarse desde la terminal. En esta versión, el usuario se enfrenta a la máquina en un tablero de 10x10.
+A classic "Battleship" game developed entirely in Python to be played from the terminal. In this version, the user plays against the machine on a 10x10 board.
 
-## 🚀 Características
-*   **Generación aleatoria:** Los barcos de ambos jugadores se colocan de forma aleatoria sin colisionar entre ellos.
-*   **Inteligencia de colocación:** El algoritmo evita que los barcos se superpongan o se toquen.
-*   **Visualización en paralelo:** La terminal muestra ambos tableros (el del jugador y el de disparos) alineados para una mejor experiencia de juego.
+## 🚀 Features
+*   **Random Generation:** Both players' ships are placed randomly without colliding.
+*   **Placement Intelligence:** The algorithm prevents ships from overlapping or touching, even diagonally.
+*   **Parallel Visualization:** The terminal displays both boards (the player's fleet and the shooting board) side by side for a seamless gaming experience.
 
-## 🛠️ Estructura del Proyecto
-El código está modularizado siguiendo las mejores prácticas:
-*   `main.py`: Archivo principal que ejecuta el bucle del juego y gestiona los turnos.
-*   `clases.py`: Contiene la lógica principal del juego mediante Programación Orientada a Objetos (clase `Tablero`).
-*   `funciones.py`: Funciones auxiliares para la interfaz visual y la impresión de matrices.
-*   `variables.py`: Almacena las constantes del juego (dimensiones, inventario de barcos).
+## 🛠️ Project Structure
+The code is modularized following best programming practices:
+*   `main.py`: Main script that runs the game loop and manages the turn-based system.
+*   `clases.py`: Contains the core game logic using Object-Oriented Programming (the `Tablero` class).
+*   `funciones.py`: Auxiliary functions handling the visual interface and printing of matrices.
+*   `variables.py`: Stores the core game constants (board dimensions, ship inventory).
 
-## 🎮 Cómo jugar
-1. Clona este repositorio:
+## 🎮 How to Play
+1. Clone this repository:
    ```bash
-   git clone [https://github.com/tu-usuario/hundir-la-flota.git](https://github.com/larasarasola2-maker/battleship-python.git)
+   git clone [https://github.com/your-username/battleship-python.git](https://github.com/your-username/battleship-python.git)
+   ```
+2. Navigate to the project folder and run the main script:
+   ```bash
+   python main.py
+   ```
+3. Enter the (X, Y) coordinates when it is your turn. Try to sink the enemy fleet before the machine destroys yours!
+
+## 👤 Author
+*   **[Lara Sarasola]** - Ramp-Up Project (Data Science Bootcamp)
+
