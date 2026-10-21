@@ -21,6 +21,15 @@ for tab in [partida.tablero1,partida.tablero2]:
 turno_jugador = True
 contador_rondas = 0
 
+mensaje_emitido = {
+    'm_2': False, # Máquina llega a 2
+    'm_3': False, # Máquina llega a 3
+    'm_4': False, # Máquina llega a 4+
+    'u_2': False, # Usuario llega a 2
+    'u_3': False, # Usuario llega a 3
+    'u_4': False  # Usuario llega a 4+
+}
+
 while True:
     contador_rondas = contador_rondas + 1
     if turno_jugador:
@@ -72,7 +81,8 @@ while True:
     contador_m = partida.contador_aciertos(partida.tablero1)
     contador_jugador = partida.contador_aciertos(partida.tablero_disparos)
 
-    funciones.desanimar_animar(contador_m,contador_jugador,partida.nombre1)
+    
+    funciones.desanimar_animar(contador_m, contador_jugador, partida.nombre1, mensaje_emitido)
 
     
     
