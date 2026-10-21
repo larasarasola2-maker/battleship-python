@@ -14,32 +14,24 @@ partida = Tablero(name1)
 for tab in [partida.tablero1,partida.tablero2]:
     #Generamos coordenadas de los barcos
     #No hace falta (el método colocar_barcos_tablero() ya llama a coord_aleatorias_barcos())
-    #partida.coord_aleatorias_barcos()
     #Colocamos barcos en el tablero
     partida.colocar_barcos_tablero(tab)
 
 turno_jugador = True
 contador_rondas = 0
 
-mensaje_emitido = {
-    'm_2': False, # Máquina llega a 2
-    'm_3': False, # Máquina llega a 3
-    'm_4': False, # Máquina llega a 4+
-    'u_2': False, # Usuario llega a 2
-    'u_3': False, # Usuario llega a 3
-    'u_4': False  # Usuario llega a 4+
-}
-
 while True:
     contador_rondas = contador_rondas + 1
     if turno_jugador:
         print("Tu turno")
         time.sleep(2)
-        #Mostramos en la terminal nuestro tablero con los barcos y el tablero de los disparos
-        #print("Tu tablero")
-        #funciones.print_tablero(partida.tablero1)
-        #print("El tablero de la máquina")
-        #funciones.print_tablero(partida.tablero_disparos)
+
+        #DEMO------------------------------------------------ QUITAR LUEGO
+        print("CHULETA TABLERO ENEMIGO")
+        funciones.print_tablero(partida.tablero2)
+        print("\n\n\n\n\n\n\n\n\n")
+        #----------------------------------------------------
+
 
         #Para que queden alineados uso la función print_tableros_juntos
         funciones.print_tableros_juntos(partida.tablero1, partida.tablero_disparos)
@@ -62,8 +54,8 @@ while True:
         # Turno de la máquina
         #Para que dipare la máquina usamos disparo de la clase tablero pero pasándole números aleatorios
         #Seleccionamos dos enteros aleatorios
-        x2 = random.randint(0,9)
-        y2 = random.randint(0,9)
+        x2 = random.randint(0,variables.dim_x-1)
+        y2 = random.randint(0,variables.dim_y-1)
 
         # Disparo
         resultado = partida.disparo(x2, y2, partida.tablero1, partida.tablero1)
@@ -82,7 +74,7 @@ while True:
     contador_jugador = partida.contador_aciertos(partida.tablero_disparos)
 
     
-    funciones.desanimar_animar(contador_m, contador_jugador, partida.nombre1, mensaje_emitido)
+    funciones.desanimar_animar(contador_m, contador_jugador, partida.nombre1, variables.mensaje_emitido)
 
     
     

@@ -1,10 +1,11 @@
 # ⚓ Battleship (Hundir la Flota) in Python
 
-A classic "Battleship" game developed entirely in Python to be played from the terminal. In this version, the user plays against the machine on a 10x10 board.
+A classic "Battleship" game developed entirely in Python to be played from the terminal. In this versi
+on, the user plays against the machine on a 10x10 board.
 
 ## 🚀 Features
 *   **Random Generation:** Both players' ships are placed randomly without colliding.
-*   **Placement Intelligence:** The algorithm prevents ships from overlapping or touching, even diagonally.
+*   **Placement Intelligence:** The algorithm prevents ships from overlapping or touching.
 *   **Parallel Visualization:** The terminal displays both boards (the player's fleet and the shooting board) side by side for a seamless gaming experience.
 
 ## 🛠️ Project Structure
@@ -17,7 +18,7 @@ The code is modularized following best programming practices:
 ## 🎮 How to Play
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/your-username/battleship-python.git](https://github.com/your-username/battleship-python.git)
+   git clone [https://github.com/larasarasola2-maker/battleship-python.git](https://github.com/larasarasola2-maker/battleship-python.git)
    ```
 2. Navigate to the project folder and run the main script:
    ```bash

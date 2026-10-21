@@ -21,3 +21,13 @@ dic_barcos = {1 : 4, 2 : 3, 3 : 2, 4 : 1}
 #JUGADORES--------------------------------------
 nombre2 = "Máquina"
 
+#FEEDBACK----------------------------------------
+mensaje_emitido = {
+    'm_2': False, # Máquina llega a 2
+    'm_3': False, # Máquina llega a 3
+    'm_4': False, # Máquina llega a 4
+    'u_2': False, # Usuario llega a 2
+    'u_3': False, # Usuario llega a 3
+    'u_4': False  # Usuario llega a 4
+}
+

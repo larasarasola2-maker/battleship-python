@@ -16,7 +16,8 @@ class Tablero:
         nombre1: string
         '''
         self.nombre1 = nombre1
-        #Inicializamos los tableros vacíos, usamos deep copy para que no se sobreescriba el mismo tablero
+        #Inicializamos los tableros vacíos dentro del init para que los inicialice en cada partida
+        #usamos deep copy para que no se sobreescriba el mismo tablero
         #Deep copy nos permite hacer copias de matrices.
         self.tablero1 = copy.deepcopy(variables.coord_tab) #Tablero jugador
         self.tablero2 = copy.deepcopy(variables.coord_tab) #Tablero máquina
@@ -40,8 +41,8 @@ class Tablero:
                 orientacion = random.randint(1,4)
                 #Necesito dos puntos para hacer una recta :)
                 #Primer punto (pos_x1,pos_y1)
-                pos_x1 = random.randint(0,9)
-                pos_y1 = random.randint(0,9)
+                pos_x1 = random.randint(0,variables.dim_x-1)
+                pos_y1 = random.randint(0,variables.dim_y-1)
 
                 if orientacion == 1:
                     pos_x2 = pos_x1
@@ -59,25 +60,30 @@ class Tablero:
                     pos_x2 = pos_x1 - (dim_barco - 1)
                     pos_y2 = pos_y1 
 
-
+                #COMPROBACIÓN 1-------------------------------------------
                 #Comprobamos si las posiciones máximas se salen del tablero
-                if ((0<=pos_x2<= 9) and (0<=pos_y2<=9)):
+                #---------------------------------------------------------
+                if ((0<=pos_x2<= variables.dim_x-1) and (0<=pos_y2<=variables.dim_y-1)):
                     #Generamos todas las casillas que ocupa este barco
                     casillas_barco_actual = []
                     for i in range(min(pos_x1, pos_x2), max(pos_x1, pos_x2) + 1):
                         for j in range(min(pos_y1, pos_y2), max(pos_y1, pos_y2) + 1):
                             casillas_barco_actual.append((i,j))
 
+                    #COMPROBACIÓN 2-------------------------------------------
                     #Comprobamos si alguna de las casillas esta ya ocupada
+                    #---------------------------------------------------------
                     hay_colision = False
-                    #Comprobamos si hay un barco al lado
-                    hay_barco_contiguo = False
                     for casilla in casillas_barco_actual:
                         # Por esto es importante que casillas_ocupadas sea una lista de tuplas
                         if casilla in casillas_ocupadas:
                             hay_colision = True
                             break
 
+                        #COMPROBACIÓN 3---------------------------------------
+                        #Comprobamos si hay un barco al lado
+                        #-----------------------------------------------------
+                        hay_barco_contiguo = False
                         x_c, y_c = casilla
                         casillas_alrededor = [(x_c+1, y_c), (x_c-1, y_c), (x_c, y_c+1), (x_c, y_c-1)]
                         # Comprobamos si alguna de las casillas de alrededor ya está ocupada
@@ -137,7 +143,7 @@ class Tablero:
 
         "La funcion devuelve True si hemos acertado con el disparo y false si fallamos"
 
-        if (x<0) or (x>9) or (y>9) or (y<0):
+        if (x<0) or (x>variables.dim_x-1) or (y>variables.dim_y-1) or (y<0):
             print("Alguna de las coordenadas que introduciste se sale del tablero, vuelva a intentarlo")
             return True
         elif tablero_analizar[x][y] == 1:
